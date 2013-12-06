@@ -1,0 +1,9 @@
+- checked = params[type][name][value] == "true" rescue false
+- param = {type => {name => {value => !checked}}}
+%li
+  = link_to params.deep_merge(param) do
+    - if checked
+      = image_tag "checkbox_selected_enabled.jpg"
+    - else
+      = image_tag "checkbox_unselected_enabled.jpg"
+    %span= label

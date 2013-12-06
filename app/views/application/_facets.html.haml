@@ -1,0 +1,21 @@
+- @facets.each do |name, details|
+  %h3= name
+  %ul
+    - case type = details["_type"]
+
+      - when "terms"
+        - details["terms"].each do |row|
+          - label = "#{row['term']} (#{row['count']})"
+          - value = row['term']
+          = render partial: "facet_row", locals: {type: type, label: label, name: name, value: value}
+
+      - when "range"
+        - details["ranges"].each do |row|
+          - from = row["from"]
+          - to   = row["to"]
+          - from_str  = "from #{from.to_i}" if from
+          - to_str    = "to #{to.to_i}"      if to
+          - count_str = "(#{row['count']})"
+          - value = [from_str, to_str].compact.join("_").gsub(" ", "_")
+          - label = [from_str, to_str, count_str].compact.join(" ")
+          = render partial: "facet_row", locals: {type: type, label: label, name: name, value: value}

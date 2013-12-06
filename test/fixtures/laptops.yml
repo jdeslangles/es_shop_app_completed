@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ram: MyString
+  os: MyString
+  cpu: MyString
+  hdd: MyString
+  hdd_type: MyString
+
+two:
+  ram: MyString
+  os: MyString
+  cpu: MyString
+  hdd: MyString
+  hdd_type: MyString

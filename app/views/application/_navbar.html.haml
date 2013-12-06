@@ -1,0 +1,17 @@
+.navbar.navbar-default
+  .navbar-brand.strong= link_to "ElasticSearch Store", root_path
+  %ul.nav.navbar-nav.navbar-left
+    %li= link_to "Products", products_path
+    %li= link_to "Stores", stores_path
+  %form.navbar-form.navbar-left
+    .form-group
+      %input.form-control{placeholder: "Search", type: "text", value: params[:q], :name => "q"}/
+    %button.btn.btn-default{type: "submit"} Submit
+  .nav.navbar-nav.navbar-right
+    - if user_signed_in?
+      %li.navbar-text Logged in as #{current_user.name}
+      %li= link_to 'Edit Profile', edit_user_registration_path
+      %li= link_to 'Logout',  destroy_user_session_path, method: :delete
+    - else
+      %li= link_to 'Sign up', new_user_registration_path
+      %li= link_to 'Login', new_user_session_path

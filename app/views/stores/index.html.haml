@@ -1,0 +1,47 @@
+%h1 Listing stores
+
+/ :javascript
+/ $(function() {
+/   handler = Gmaps.build('Google');
+/   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+/     markers = handler.addMarkers([
+/       {
+/         "lat": 0,
+/         "lng": 0,
+/         "picture": {
+/           "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+/           "width":  36,
+/           "height": 36
+/         },
+/         "infowindow": "hello!"
+/       }
+/     ]);
+/     handler.bounds.extendWith(markers);
+/     handler.fitMapToBounds();
+/   });
+/   setTimeout(function(){handler.addMarkers(#{ @map_hash.to_json })},3000);
+/   //markers = handler.addMarkers(#{ @map_hash.to_json });
+/ })
+
+/ %div(style='width: 800px')
+/   #map(style='width: 800px; height: 400px;')
+
+%table
+  %tr
+    %th Address
+    %th Lon/Lat
+    %th
+    %th
+    %th
+
+  - @stores.each do |store|
+    %tr
+      %td= store.address
+      %td= store.lon_lat
+      %td= link_to 'Show', store
+      %td= link_to 'Edit', edit_store_path(store)
+      %td= link_to 'Destroy', store, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Store', new_store_path

@@ -1,0 +1,30 @@
+# 2013-12-04 15:00:31:265 [_search] (["products"])
+#
+curl -X GET 'http://localhost:9200/products/camera/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"canon"}},"size":10}'
+
+# 2013-12-04 15:00:31:265 [200] (1 msec)
+
+# 2013-12-04 15:11:45:028 [_search] (["products"])
+#
+curl -X GET 'http://localhost:9200/products/camera/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"canon"}},"size":10}'
+
+# 2013-12-04 15:11:45:030 [200] (1 msec)
+#
+# {"took":1,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":2,"max_score":0.21875,"hits":[{"_index":"products","_type":"camera","_id":"529f2a132b992d2be6000001","_score":0.21875,"_source":{"_type":"Camera","created_at":"2013-12-04T13:11:50Z","description":"awesome","name":"Canon X100","price":9900,"resolution":"8MB","updated_at":"2013-12-04T14:35:13Z","weight":200,"zoom":"15x"}},{"_index":"products","_type":"camera","_id":"529f193f2b992d27a8000001","_score":0.067124054,"_source":{"_type":"Camera","created_at":"2013-12-04T12:00:01Z","description":"nice camera bro","name":"Canon X1","price":9900,"resolution":"8MB","updated_at":"2013-12-04T12:00:01Z","weight":150,"zoom":"10x"}}]}}
+
+# 2013-12-04 15:12:49:236 [_search] (["products"])
+#
+curl -X GET 'http://localhost:9200/products/camera/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"canon"}},"size":10}'
+
+# 2013-12-04 15:12:49:237 [200] (1 msec)
+#
+# {"took":1,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":2,"max_score":0.21875,"hits":[{"_index":"products","_type":"camera","_id":"529f2a132b992d2be6000001","_score":0.21875,"_source":{"_type":"Camera","created_at":"2013-12-04T13:11:50Z","description":"awesome","name":"Canon X100","price":9900,"resolution":"8MB","updated_at":"2013-12-04T14:35:13Z","weight":200,"zoom":"15x"}},{"_index":"products","_type":"camera","_id":"529f193f2b992d27a8000001","_score":0.067124054,"_source":{"_type":"Camera","created_at":"2013-12-04T12:00:01Z","description":"nice camera bro","name":"Canon X1","price":9900,"resolution":"8MB","updated_at":"2013-12-04T12:00:01Z","weight":150,"zoom":"10x"}}]}}
+
+# 2013-12-04 15:19:00:230 [_search] (["products"])
+#
+curl -X GET 'http://localhost:9200/products/camera/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"canon"}},"size":10}'
+
+# 2013-12-04 15:19:00:232 [200] (1 msec)
+#
+# {"took":1,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":2,"max_score":0.21875,"hits":[{"_index":"products","_type":"camera","_id":"529f2a132b992d2be6000001","_score":0.21875,"_source":{"_type":"Camera","created_at":"2013-12-04T13:11:50Z","description":"awesome","name":"Canon X100","price":9900,"resolution":"8MB","updated_at":"2013-12-04T14:35:13Z","weight":200,"zoom":"15x"}},{"_index":"products","_type":"camera","_id":"529f193f2b992d27a8000001","_score":0.067124054,"_source":{"_type":"Camera","created_at":"2013-12-04T12:00:01Z","description":"nice camera bro","name":"Canon X1","price":9900,"resolution":"8MB","updated_at":"2013-12-04T12:00:01Z","weight":150,"zoom":"10x"}}]}}
+
